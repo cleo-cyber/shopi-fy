@@ -37,7 +37,7 @@ tracks=[{
 
 
 ]
-def hello(request):
+def index(request):
 
     context={'tracks':tracks}
-    return render(request,'index.html',context)
+    return render(request,'musicapp/index.html',context)

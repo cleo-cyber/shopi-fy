@@ -14,26 +14,7 @@
 <body>
     <header>
         <div id="hero_section">
-            <div id="contnent">
-
-                <div class="header_content">
-                    <div class="logo">
-                        <h2>Musicality</h2>
-                    </div>
-                    <ul class="nav_links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                    <div class="burger">
-                        <div class="line1"></div>
-                        <div class="line2"></div>
-                        <div class="line3"></div>
-                    </div>
-                </div>
-
-            </div>
+           {% include 'nav.html' %}
             <div class="hero_content">
                 <div class="text">
                     <h2>Musicality</h2>
@@ -56,6 +37,7 @@
                 <span class="right"><i class='bx bx-chevron-right'></i></span>
             </p>
         </div>
+        
         <div class="slider">
             {% for track in tracks %}
             <div class="products">
@@ -70,7 +52,7 @@
                 <a href="#">Get it Now</a>
             </div>
             {% endfor %}
- 
+        </div>
     </section>
 
     <!-- AFFIRMATION SECTION -->
@@ -155,51 +137,7 @@
     </section>
 
     <!-- FAQS SECTION -->
-    <section>
-        <div class="faq_contaier">
-
-            <div class="faq">
-              
-                <h2>FAQS</h2>
-                <hr>
-                <div class="queries_container">
-                 
-                <div class="question">
-                    <h3>How does one acquire products?</h3>
-                    <i class="fa-solid fa-caret-down togglebar"></i>
-                </div>
-                
-                <div class="answer">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus officiis autem nobis reiciendis?
-                         Error nostrum quod perspiciatis sint doloribus nesciunt expedita aut sapiente sequi, architecto in voluptatum, saepe exercitationem deserunt!</p>
-                </div>
-            </div>
-            <div class="queries_container">
-                <div class="question">
-                    <h3>How does one acquire products?</h3>
-                    <i class="fa-solid fa-caret-down togglebar"></i>
-                </div>
-                <div class="answer">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus officiis autem nobis reiciendis?
-                         Error nostrum quod perspiciatis sint doloribus nesciunt expedita aut sapiente sequi, architecto in voluptatum, saepe exercitationem deserunt!</p>
-                </div>
-                </div>
-                <div class="queries_container">
-                <div class="question">
-                    <h3>How does one acquire products?</h3>
-                    <i class="fa-solid fa-caret-down togglebar"></i>
-                </div>
-                <div class="answer">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus officiis autem nobis reiciendis?
-                         Error nostrum quod perspiciatis sint doloribus nesciunt expedita aut sapiente sequi, architecto in voluptatum, saepe exercitationem deserunt!</p>
-                </div>
-            </div>
-            </div>
-            </div>
-            
-            </div>
-        </div>
-    </section>
+    {% include 'faq.html'%}
 
     <!-- GET INTOUCH SECTION -->
 
@@ -224,46 +162,7 @@
     </section>
 
     <!-- FOOTER SECTION -->
-    <section>
-        <div class="footer_container">
-            <div class="footer_subcontainer">
-                <div class="log">
-                    <div class="log_container">
-                    <h2>Musicality</h2>
-                    <hr>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate similique quae impedit dolor nam possimus?</p>
-                    <p class="phone"><i class="fa-solid fa-phone"></i> +25412345678</p>
-                    <p class="email"><i class="fa-solid fa-envelope"></i>example@Musicality.com</p>
-                </div>
-                <div class="social_links">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="#"><i class="fa-brands fa-spotify"></i></a>
-                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                </div>
-
-                </div>
-               
-                    <ul class="links">
-                        <h2>Support</h2>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                    
-                    <div class="policy">
-                        <h2>Policy</h2>
-                        <ul>
-                            <li><a href="#">Shipping & returns</a></li>
-                            <li><a href="#">Store Policy</a></li>
-                            <li><a href="#">Payment methods</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-            </div>
-        </div>
-    </section>
+    {% include 'footer.html' %}
     <script src="{% static 'js/main.js'%}"></script>
 </body>
 </html>
