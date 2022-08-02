@@ -50,137 +50,27 @@
 
     <section id="slideshow">
         <div class="welcomer">
-            <h1>Our Products</h1>
+            <h1>MUSIC</h1>
             <p>
                 <span class="left"><i class='bx bx-chevron-right bx-flip-horizontal'></i></span>
                 <span class="right"><i class='bx bx-chevron-right'></i></span>
             </p>
         </div>
         <div class="slider">
+            {% for track in tracks %}
             <div class="products">
                 <picture>
-                    <img src="{% static 'images/philips.jpg' %}" alt="">
+                   <img src="{{track.image_link}}" alt=""> 
                 </picture>
                 <div class="details">
                     <p>
-                        <b>Phillips</b>
-                        <small>New arrival</small>
-                    </p>
-                    <samp>$40.00</samp>
+                        <b>{{ track.name }}</b>
                 </div>
 
-                <div class="button">
-                    <p class="star">
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                    </p>
-
-                </div>
+                <a href="#">Get it Now</a>
             </div>
-
-            <div class="products">
-                <picture>
-                    <img src="{% static 'images/golden.jpg' %}" alt="">
-                </picture>
-                <div class="details">
-                    <p>
-                        <b>Golden</b>
-                        <small>New arrival</small>
-                    </p>
-                    <samp>$20.00</samp>
-                </div>
-
-                <div class="button">
-                    <p class="star">
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                    </p>
-
-                </div>
-            </div>
-
-            <div class="products">
-                <picture>
-                    <img src="{% static 'images/jbl.avif' %}" alt="">
-                </picture>
-                <div class="details">
-                    <p>
-                        <b>JBL</b>
-                        <small>New arrival</small>
-                    </p>
-                    <samp>$40.00</samp>
-                </div>
-
-                <div class="button">
-                    <p class="star">
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                    </p>
-
-                </div>
-            </div>
-
-            <div class="products">
-                <picture>
-                    <img src="{% static 'images/pods.jpg' %}" alt="">
-                </picture>
-                <div class="details">
-                    <p>
-                        <b>Ear pods</b>
-                        <small>New arrival</small>
-                    </p>
-                    <samp>$30.00</samp>
-                </div>
-
-                <div class="button">
-                    <p class="star">
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                    </p>
-
-                </div>
-            </div>
-
-            <div class="products">
-                <picture>
-                    <img src="{% static 'images/jbl.avif' %}" alt="">
-                </picture>
-                <div class="details">
-                    <p>
-                        <b>Sumsung</b>
-                        <small>New arrival</small>
-                    </p>
-                    <samp>$70.00</samp>
-                </div>
-
-                <div class="button">
-                    <p class="star">
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                        <strong>&star;</strong>
-                    </p>
-
-                </div>
-            </div>
-
-        </div>
-        <div class="explore_button">
-            <button class="explore"><a href="#">Explore Collections</a></button>
-        </div>
+            {% endfor %}
+ 
     </section>
 
     <!-- AFFIRMATION SECTION -->
