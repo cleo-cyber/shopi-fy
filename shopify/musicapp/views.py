@@ -61,7 +61,7 @@ upcoming_events=[
         'Tickets':'$50',
         'description':'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab enim perferendis, doloremque esse.'
 
-    }
+    },
 ]
 
 
