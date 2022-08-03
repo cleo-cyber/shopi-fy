@@ -7,6 +7,9 @@
     text-decoration: none;
     transition: all .3s ;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{%static 'styles/main.css'%}"> -->
+    <link rel="stylesheet" href="{%static 'styles/tour.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+{%  block content%}
+<header>
+    {% include 'nav.html' %}
+</header>
+<section id="tours">
+
+    <div class="eventcontainer">
+        <h2 class="welcometext">Upcoming Events</h2>
+        
+        {% for event in upcoming_events %}
+        <div class="events">
+            <span class="date">{{event.date}}</span>
+            <div class="event_desc">
+                <h2>{{event.event_detail}}</h2>
+                <p>{{event.description}}</p>
+            </div>
+            <div class="venue">
+                <h3>{{event.location}}</h3>
+                <p>{{event.Venue}}</p>
+            </div>
+
+            <div class="tickets">
+                <h3>Tickets</h3>
+                <span>{{event.Tickets}}</span>
+            </div>
+            <div class="button">
+                <button>Buy Ticket</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>
+<footer>{% include 'footer.html' %}</footer>
+
+{% endblock %}
+
+
+
+
+
+
+
