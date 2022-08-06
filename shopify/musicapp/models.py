@@ -21,3 +21,11 @@ class Product(models.Model):
     class Meta:
         ordering=['created']
     
+class Tour(models.Model):
+    created=models.DateTimeField(auto_now_add=True)
+    event_description=models.CharField(max_length=200)
+    venue=models.CharField(max_length=200)
+    price=models.IntegerField(default=0)
+
+    class Meta:
+        ordering=['created']
