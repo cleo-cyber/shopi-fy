@@ -1,6 +1,7 @@
 from multiprocessing import context
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.views import generic
 
 # Create your views here.
 
@@ -64,12 +65,15 @@ upcoming_events=[
     },
 ]
 
+class IndexView(generic.ListView):
+    template_name= 'musicapp/index.html'
+    context_object_name='tracks'
 
-def index(request):
-    
-    context={'tracks':tracks}
-    return render(request,'musicapp/index.html',context)
+    def get_queryset(self):
+        return tracks
+class TourView(generic.ListView):
+    template_name='musicapp/tour.html'
+    context_object_name='upcoming_events'
 
-def tours(request):
-    context={'upcoming_events':upcoming_events}
-    return render(request,'musicapp/tour.html',context)
+    def get_queryset(self):
+        return upcoming_events
