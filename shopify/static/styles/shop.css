@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,100&display=swap');
+
+
+.burger{
+    display: none;
+}
+body{
+    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+
+}
+header .carousel{
+    background-color: #f4f4f4;
+    /* overflow: hidden; */
+}
+img{
+    width: 100%;
+}
+.carousel_inner{
+    width: 400%;
+    display: flex;
+   
+    
+}
+.carousel_inner img{
+    max-height: 70%;
+    display: block;
+}
+.carousel_item{
+width: 100%;
+overflow: hidden;
+   
+}

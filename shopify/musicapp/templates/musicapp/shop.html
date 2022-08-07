@@ -1,0 +1,21 @@
+{% load static %}
+
+<link rel="stylesheet" href="{%static 'styles/tour.css'%}">
+<link rel="stylesheet" href="{% static 'styles/shop.css '%}">
+
+<header>
+    {% include 'nav.html' %}
+    <div class="carousel">
+        <div class="carousel_inner">
+            <div class="carousel_item">
+                <img src="{% static 'images/singing.jpg' %}" alt="">
+            </div>
+            <div class="carousel_item">
+                <img src="{% static 'images/philips.jpg' %}" alt="">
+            </div>
+            <div class="carousel_item">
+                <img src="{% static 'images/performance.jpg' %}" alt="">
+            </div>
+        </div>
+    </div>
+</header>

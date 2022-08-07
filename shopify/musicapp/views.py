@@ -75,3 +75,10 @@ class TourView(generic.ListView):
 
     def get_queryset(self):
         return upcoming_events
+
+
+class ShopView(generic.ListView):
+    template_name='musicapp/shop.html'
+
+    def get_queryset(self):
+        pass
