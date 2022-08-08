@@ -1,5 +1,5 @@
 # Getting started with shopify
-This application is implemented using python (Django) and Django
+This application is implemented using python (Django)
 
 ## Tech Stack (Dependencies)
 1. Backend Dependencies
