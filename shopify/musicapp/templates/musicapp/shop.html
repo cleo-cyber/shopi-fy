@@ -1,21 +1,41 @@
 {% load static %}
 
 <link rel="stylesheet" href="{%static 'styles/tour.css'%}">
+<link rel="stylesheet" href="{%static 'styles/main.css'%}">
 <link rel="stylesheet" href="{% static 'styles/shop.css '%}">
 
 <header>
     {% include 'nav.html' %}
-    <div class="carousel">
-        <div class="carousel_inner">
-            <div class="carousel_item">
-                <img src="{% static 'images/singing.jpg' %}" alt="">
+</header>
+<section id="products">
+    <div class="containerr">
+        <div class="product_container">
+            {% for item in shopitems %}
+            <div class="items">
+            <div class="banner">
+              <a href="">  <img src="{% static 'images/sumsung.jpg' %}" alt=""></a>
+              </div>
+              <div class="desc">
+                <h2>{{item.name}}</h2>
+      
+                <a href="#">{{item.price}}</a>
+              </div>  
             </div>
-            <div class="carousel_item">
-                <img src="{% static 'images/philips.jpg' %}" alt="">
-            </div>
-            <div class="carousel_item">
-                <img src="{% static 'images/performance.jpg' %}" alt="">
+            {% endfor %}
+          
+        </div>
+    </div>
+  
+</section>
+<section id="quote">
+    <div class="containerr">
+        <div class="quot_container">
+            <div class="quotes">
+                
             </div>
         </div>
     </div>
-</header>
+</section>
+<footer>
+{% include 'footer.html' %}
+</footer>
