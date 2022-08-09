@@ -42,11 +42,11 @@
             {% for track in tracks %}
             <div class="products">
                 <picture>
-                   <img src="{{track.image_link}}" alt=""> 
+                   <img src="{{track.track_banner.url}}" alt="banner"> 
                 </picture>
                 <div class="details">
                     <p>
-                        <b>{{ track.name }}</b>
+                        <b>{{ track.title }}</b>
                 </div>
 
                 <a href="#">Get it Now</a>

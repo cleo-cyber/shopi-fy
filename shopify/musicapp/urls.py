@@ -4,5 +4,6 @@ from musicapp import views
 urlpatterns=[
     path('',views.IndexView.as_view(),name='index'),
     path('tours/',views.TourView.as_view(),name='tours'),
-    path('shop/',views.ShopView.as_view(),name='shop')
+    path('shop/',views.ShopView.as_view(),name='shop'),
+    path('upload/',views.add_track,name='upload'),
 ]

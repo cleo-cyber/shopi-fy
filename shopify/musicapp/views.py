@@ -1,39 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.views import generic
-
+from musicapp.models import Tracks
+from musicapp.forms import *
+from django.contrib import messages
 # Create your views here.
 
-tracks=[{
-'id':1,
-'image_link':'static/images/golden.jpg ',
-'name':'Katelele'
-
-},
-{
-'id':2,
-'image_link':'static/images/jbl.avif',
-'name':'Casset'
-
-},
-{
-'id':3,
-'image_link':'static/images/pods.jpg',
-'name':'Tape'
-
-},
-{
-'id':4,
-'image_link':'static/images/headphone.jpg',
-'name':'Fan'
-
-},
-{
-'id':5,
-'image_link':'static/images/philips.jpg',
-'name':'Catalogue'
-
-}
-]
 upcoming_events=[
     {   'event_detail':'Live show',
         'date':'21 jan 2022',
@@ -85,12 +56,15 @@ shopitems=[{
 
 ]
 
+    
 class IndexView(generic.ListView):
     template_name= 'musicapp/index.html'
     context_object_name='tracks'
 
     def get_queryset(self):
-        return tracks
+        context=Tracks.objects.all()
+        print(context)
+        return context
 class TourView(generic.ListView):
     template_name='musicapp/tour.html'
     context_object_name='upcoming_events'
@@ -104,3 +78,19 @@ class ShopView(generic.ListView):
     context_object_name='shopitems'
     def get_queryset(self):
        return shopitems
+
+#  POST METHODS
+def add_track(request):
+    submitted=False
+    form=ImageForm()
+    if request.method=='POST':
+        form = ImageForm(request.POST,request.FILES)
+        if form.is_valid():
+            track=Tracks()
+            track.track_banner=request.FILES['track_banner']
+            track.title=request.POST.get('title')
+
+            track.save()
+            messages.success(request,'Product added successfully')
+            return redirect('index')
+    return render(request,'musicapp/add_tracks.html',{'form':form})
