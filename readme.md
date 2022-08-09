@@ -1,11 +1,12 @@
 # Getting started with shopify
-This application is implemented using python (Django) and Django
+This application is implemented using python (Django framework) 
 
 ## Tech Stack (Dependencies)
 1. Backend Dependencies
 Tech stack used are:
 - Virtual Environment
 - Python and Django framework
+- Postgresql
 
 2. Frontend Dependencies
 - Vanilla JS
