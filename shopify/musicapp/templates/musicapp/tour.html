@@ -24,24 +24,24 @@
     <div class="eventcontainer">
         <h2 class="welcometext">Upcoming Events</h2>
         
-        {% for event in upcoming_events %}
+        {% for event in tours %}
         <div class="events">
-            <span class="date">{{event.date}}</span>
+            <span class="date">{{event.created}}</span>
             <div class="event_desc">
-                <h3>{{event.event_detail}}</h3>
-                <p>{{event.description}}</p>
+                <h3>{{event.event_type}}</h3>
+                <p>{{event.event_description}}</p>
             </div>
             <div class="venue">
-                <h3>{{event.location}}</h3>
-                <p class="ph">{{event.Venue}}</p>
+                <h3>Venue</h3>
+                <p class="ph">{{event.venue}}</p>
             </div>
 
             <div class="tickets">
                 <h3>Tickets</h3>
-                <span class="ph">{{event.Tickets}}</span>
+                <span class="ph">{{event.price}}</span>
             </div>
             <div class="button">
-                <button>Buy Ticket</button>
+                <button type="submit">Buy Ticket</button>
             </div>
         </div>
         {% endfor %}

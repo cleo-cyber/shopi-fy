@@ -16,7 +16,7 @@ class Tracks(models.Model):
 class Product(models.Model):
     created=models.DateTimeField(auto_now_add=True)
     product_image=models.ImageField(null=True,blank=True,upload_to='productImages')
-    price=models.IntegerField()
+    price=models.DecimalField(max_digits=10,decimal_places=2)
 
     class Meta:
         ordering=['created']
@@ -25,7 +25,7 @@ class Tour(models.Model):
     created=models.DateTimeField(auto_now_add=True)
     event_description=models.CharField(max_length=200)
     venue=models.CharField(max_length=200)
-    price=models.IntegerField(default=0)
-
+    price=models.DecimalField(max_digits=10,decimal_places=2)
+    event_type=models.CharField(max_length=200,null=True)
     class Meta:
         ordering=['created']

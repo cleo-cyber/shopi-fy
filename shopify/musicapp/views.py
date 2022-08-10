@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.views import generic
-from musicapp.models import Tracks
+from musicapp.models import Tracks,Tour
 from musicapp.forms import *
 from django.contrib import messages
 # Create your views here.
@@ -56,7 +56,7 @@ shopitems=[{
 
 ]
 
-    
+# ===== DISPLAY METHODS ===== #  
 class IndexView(generic.ListView):
     template_name= 'musicapp/index.html'
     context_object_name='tracks'
@@ -67,10 +67,12 @@ class IndexView(generic.ListView):
         return context
 class TourView(generic.ListView):
     template_name='musicapp/tour.html'
-    context_object_name='upcoming_events'
+    context_object_name='tours'
 
     def get_queryset(self):
-        return upcoming_events
+        context=Tour.objects.all()
+        print(context)
+        return context
 
 
 class ShopView(generic.ListView):
@@ -79,7 +81,7 @@ class ShopView(generic.ListView):
     def get_queryset(self):
        return shopitems
 
-#  POST METHODS
+# ===== POST METHODS ===== #
 def add_track(request):
     submitted=False
     form=ImageForm()
@@ -94,3 +96,20 @@ def add_track(request):
             messages.success(request,'Product added successfully')
             return redirect('index')
     return render(request,'musicapp/add_tracks.html',{'form':form})
+
+
+def add_tour(request):
+    submitted=False
+    form=TourForm()
+    if request.method=='POST':
+        form=TourForm(request.POST)
+        if form.is_valid():
+            newtour=Tour()
+            newtour.event_description=request.POST.get('event_description')
+            newtour.venue=request.POST.get('venue')
+            newtour.price=request.POST.get('price')
+            newtour.event_type=request.POST.get('event_type')
+            newtour.save()
+            return redirect('tours')
+
+    return render(request,'musicapp/add_tour.html',{'form':form})
