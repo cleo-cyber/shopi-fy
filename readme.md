@@ -18,11 +18,9 @@ Tech stack used are:
 
 ```
 ├── README.md
-├── shopify *** the main driver of the app.
+├── shopify *** project.
                   "python manage.py runserver" to run after installing dependencies
-├── db.sqlite3
-├── error.log
-├── musicapp *** main project app
+├── musicapp *** main  app
 └── templates
     ├── index
     ├── shop
