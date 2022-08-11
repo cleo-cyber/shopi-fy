@@ -36,7 +36,7 @@ upcoming_events=[
 shopitems=[{
     'itemimage':'static/images/sumsung.jpg',
     'name':'EarPods',
-    'price':'$20'
+    'price':'$20.'
 },
 {
     'itemimage':'static/images/headphone.jpg',
