@@ -7,4 +7,5 @@ urlpatterns=[
     path('shop/',views.ShopView.as_view(),name='shop'),
     path('uploadtrack/',views.add_track,name='upload'),
     path('addtour/',views.add_tour,name='newtour'),
+    path('admin/',views.admin,name='admin'),
 ]

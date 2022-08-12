@@ -113,3 +113,6 @@ def add_tour(request):
             return redirect('tours')
 
     return render(request,'musicapp/add_tour.html',{'form':form})
+
+def admin(request):
+    return render(request,'admin.html')
