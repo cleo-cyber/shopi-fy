@@ -9,3 +9,7 @@ class TourForm(forms.Form):
     venue=forms.CharField()
     price=forms.DecimalField(max_digits=50)
     event_type=forms.CharField(max_length=200)
+
+class LoginForm(forms.Form):
+    username=forms.CharField()
+    password=forms.CharField()

@@ -8,4 +8,5 @@ urlpatterns=[
     path('uploadtrack/',views.add_track,name='upload'),
     path('addtour/',views.add_tour,name='newtour'),
     path('administrator/',views.admin,name='admin'),
+    path('adminlogin/',views.admin_login,name='login')
 ]

@@ -14,6 +14,8 @@ import os
 from pathlib import Path
 import environ
 
+
+
 env=environ.Env()
 env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -77,6 +79,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'shopify.wsgi.application'
 
+AUTH_USER_MODEL='musicapp.Account'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases

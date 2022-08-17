@@ -1,38 +1,15 @@
+from re import T
 from django.shortcuts import render,redirect
 from django.views import generic
 from musicapp.models import Tracks,Tour
 from musicapp.forms import *
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
 # Create your views here.
 
-upcoming_events=[
-    {   'event_detail':'Live show',
-        'date':'21 jan 2022',
-        'location':'Nairobi',
-        'Venue':'Carnivore',
-        'Tickets':'$20',
-        'description':'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab enim perferendis, doloremque esse.'
-    
 
-    },
-        {
-        'event_detail':'Virtual show',
-        'date':'21 Feb 2023',
-        'location':'Mombasa',
-        'Venue':'Magharibi',
-        'Tickets':'$19',
-        'description':'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab enim perferendis, doloremque esse.'
-
-    },
-    {  'event_detail':'Inperson show',
-        'date':'1 Dec 2023',
-        'location':'Tanzania',
-        'Venue':'Diani',
-        'Tickets':'$50',
-        'description':'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab enim perferendis, doloremque esse.'
-
-    },
-]
 shopitems=[{
     'itemimage':'static/images/sumsung.jpg',
     'name':'EarPods',
@@ -82,6 +59,7 @@ class ShopView(generic.ListView):
        return shopitems
 
 # ===== POST METHODS ===== #
+@login_required
 def add_track(request):
     submitted=False
     form=ImageForm()
@@ -95,9 +73,9 @@ def add_track(request):
             track.save()
             messages.success(request,'Product added successfully')
             return redirect('index')
-    return render(request,'musicapp/add_tracks.html',{'form':form})
+    return render(request,'musicapp/add_data/add_tracks.html',{'form':form})
 
-
+@login_required
 def add_tour(request):
     submitted=False
     form=TourForm()
@@ -112,7 +90,12 @@ def add_tour(request):
             newtour.save()
             return redirect('tours')
 
-    return render(request,'musicapp/add_tour.html',{'form':form})
+    return render(request,'musicapp/add_data/add_tour.html',{'form':form})
 
 def admin(request):
     return render(request,'admin.html')
+    
+
+def admin_login(request):
+    form=LoginForm()
+    return render(request,'musicapp/admin/admin_login.html',{'form':form})
