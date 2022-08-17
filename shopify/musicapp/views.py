@@ -1,4 +1,3 @@
-from re import T
 from django.shortcuts import render,redirect
 from django.views import generic
 from musicapp.models import Tracks,Tour
@@ -96,6 +95,23 @@ def admin(request):
     return render(request,'admin.html')
     
 
-def admin_login(request):
-    form=LoginForm()
-    return render(request,'musicapp/admin/admin_login.html',{'form':form})
+# ==== User Accounts ==== #
+
+def registration_view(request):
+    context={}
+    if request.method=='POST':
+        form=RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+        context['register_form']=form
+
+    else:#get request
+        form=RegistrationForm()
+        context['register_form']=form
+
+    return render(request,'musicapp/admin/registration.html',context)
+
+
+def login_view(request):
+    return render(request,'musicapp/admin/login.html')

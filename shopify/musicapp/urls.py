@@ -1,6 +1,7 @@
 from django.urls import path
 from musicapp import views
 
+
 urlpatterns=[
     path('',views.IndexView.as_view(),name='index'),
     path('tours/',views.TourView.as_view(),name='tours'),
@@ -8,5 +9,6 @@ urlpatterns=[
     path('uploadtrack/',views.add_track,name='upload'),
     path('addtour/',views.add_tour,name='newtour'),
     path('administrator/',views.admin,name='admin'),
-    path('adminlogin/',views.admin_login,name='login')
+    path('registration/',views.registration_view,name='registration'),
+    path('login/',views.login_view,name='login')
 ]
