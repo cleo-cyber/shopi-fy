@@ -19,11 +19,11 @@ Tech stack used are:
 ```
 ├── README.md
 ├── shopify *** project.
-                  "python manage.py runserver" to run after installing dependencies
+├── shop                   "python manage.py runserver" to run after installing dependencies
 ├── musicapp *** main  app
 └── templates
     ├── index
-    ├── shop
+    ├── admin ***administrator operations
     └── tour
 ├── requirements.txt *** The dependencies we need to install with "pip3 install -r requirements.txt"
 ├── static
