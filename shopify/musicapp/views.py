@@ -5,7 +5,7 @@ from musicapp.forms import *
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate,login,logout
 # Create your views here.
 
 
@@ -74,7 +74,6 @@ def add_track(request):
             return redirect('index')
     return render(request,'musicapp/add_data/add_tracks.html',{'form':form})
 
-@login_required
 def add_tour(request):
     submitted=False
     form=TourForm()
@@ -88,11 +87,11 @@ def add_tour(request):
             newtour.event_type=request.POST.get('event_type')
             newtour.save()
             return redirect('tours')
+    else:
+        form=TourForm()
 
     return render(request,'musicapp/add_data/add_tour.html',{'form':form})
 
-def admin(request):
-    return render(request,'admin.html')
     
 
 # ==== User Accounts ==== #
@@ -114,4 +113,35 @@ def registration_view(request):
 
 
 def login_view(request):
-    return render(request,'musicapp/admin/login.html')
+    context={}
+    if request.method=='POST':
+        form=UserLoginForm(request.POST)
+        if form.is_valid():
+            email=request.POST['email']
+            password=request.POST['password']
+
+            user=authenticate(request,email=email,password=password)
+
+            if user is not None:
+                login(request,user)
+                return redirect('admin')
+        else:
+            context['login_form']=form
+    else:
+        form=UserLoginForm()
+        context['login_form']=form
+
+    return render(request,'musicapp/admin/login.html',context)
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')
+
+
+
+@login_required
+def admin(request):
+    
+    return render(request,'admin.html')
+# TODO -ASSIGNING PERMISSIONS

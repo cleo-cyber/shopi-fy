@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,100&display=swap');
-
+/* TODO- RESTYLE THE PAGE */
 *{
     margin: 0;
     padding: 0;
@@ -13,11 +13,16 @@ img{
 body{
     font-family: 'Poppins', sans-serif;   
     background-color: #f4f4f4;
+    height: 100%;
 }
 
 .administrator{
     display: flex;
-    min-height: 100vh;
+    position: relative;
+    
+}
+.dash_container{
+    max-height: 100%;
 }
 .dashboard{
     flex: .5;
@@ -26,8 +31,10 @@ body{
     align-items: center;
     justify-content: space-evenly;
     background:linear-gradient(120deg,#ffffff,#bfc2c4);
-    position: relative;
-
+    max-height: 100%;
+    z-index: 20;
+    position: static;
+    height: 100%;
 }
 .user_operations{
     flex: 2;
@@ -40,8 +47,8 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: absolute;
     top: 5vh;
+    height: 100%;
 }
 .links{
     display: flex;
@@ -49,11 +56,12 @@ body{
     margin: 2rem 0;
     padding: 1rem 2rem;
     align-items: center;
-    position: absolute;
-    left: 0;
-    top: 30vh;
+    /* position: absolute; */
+    /* left: 0; */
+    /* top: 30vh; */
     gap: 2vh;
     cursor: pointer;
+    height: 100%;
 
 }
 .main{
@@ -103,9 +111,10 @@ body{
 }
 
 .logout{
-    position: absolute;
-    bottom: 5vh;
-    left: 2rem;
+    /* position: absolute; */
+    /* bottom: 5vh;
+    left: 2rem; */
+    height: 100%;
     
 }
 .logout button{

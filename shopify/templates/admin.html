@@ -1,3 +1,5 @@
+<!-- TODO -->
+
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
@@ -13,6 +15,7 @@
 <body>
     <main>
         <section class="administrator">
+            <div class="dash_container">
             <div class="dashboard">
             <div class="user">
                 <img src="{% static '/images/avatar-ali.png' %}" alt="">
@@ -50,31 +53,19 @@
                 
             </div>
             <div class="logout">
-                 <a href="#"><button>Log-out</button></a>
+                 <a href="{% url 'logout' %}"><button>Log-out</button></a>
+            </div>
             </div>
             </div>
             <div class="user_operations">
                 <div class="navigation">
-                    <h2>Hi Username</h2>
+                    <h2>Welcome back {{request.user.username}}!!</h2>
                     <div class="search">
                     <input type="search"><i class="fa-brands fa-searchengin"></i>
                 </div>
                 </div>
             <div class="form_operations">
-                <!-- <form action="/action_page.php">
-                    <div class="form-group">
-                      <label for="email">Email address:</label>
-                      <input type="email" class="form-control" id="email">
-                    </div>
-                    <div class="form-group">
-                      <label for="pwd">Password:</label>
-                      <input type="password" class="form-control" id="pwd">
-                    </div>
-                    <div class="checkbox">
-                      <label><input type="checkbox"> Remember me</label>
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                  </form> -->
+ 
                   {%  block content %}
                   
                   {% endblock content %}

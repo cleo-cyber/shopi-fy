@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+{% block content %}
+{% include 'registernav.html' %}
+<form method="POST" action="{% url 'login' %}">
+    {% csrf_token%}
+
+    {{login_form.as_p}}
+    {% if login_form.non_field_errors %}
+    {% for error in login_form.non_field_errors %}
+    <p style="color:red;"> {{error}}</p>
+    {% endfor %}
+    {% endif %}
+    <button type="submit">Login</button>
+  </form>
+
+{% endblock content %}

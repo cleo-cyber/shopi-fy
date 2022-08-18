@@ -10,5 +10,6 @@ urlpatterns=[
     path('addtour/',views.add_tour,name='newtour'),
     path('administrator/',views.admin,name='admin'),
     path('registration/',views.registration_view,name='registration'),
-    path('login/',views.login_view,name='login')
+    path('login/',views.login_view,name='login'),
+    path('logout/',views.logout_view,name='logout')
 ]

@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<main>
+    <header>
+        <div class="container">
+        <div class="logo">
+            <h2>Musicality</h2>
+        </div>
+        <div class="buttons">
+           <a href="{%url 'login'%}"><button class="log">Login</button></a>
+           <a href="{%url 'registration'%}"><button class="reg">Register</button></a>
+        </div>
+        </div>
+    </header>
+</main>
+{% endblock content %}

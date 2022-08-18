@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    background: #f4f4f4;
+}
+button{
+    padding:1vh 5vw;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+header{
+    background-color: rgba(0, 0, 0, 0.841);
+    color: #fff;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 2vh 0;
+}
+header button{
+    background-color: transparent;
+    color: #fff;
+    padding: 1vh 2vw;
+    border: none;
+    /* border: 1px solid #fff; */
+    /* z-index: 2; */
+    transition: .3s ease;
+}
+.reg{
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.924);
+ 
+
+}
+.log{
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+header button:hover{
+    opacity: .9;
+    background-color: black;
+    border: none;
+    box-shadow: none;
+}
+.log:hover{
+    color: rgba(255, 255, 255, 0.763);
+    background-color: transparent;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    width: 60%;
+    z-index: 2;
+    background-color: #141E30;
+    padding: 5vh 0;
+    margin: 10vh auto;
+
+}
+form input{
+    width: 50vw;
+    padding: 1.5vh 0;
+}
+form label{
+    display: block;
+    color: #fff;
+}
