@@ -1,5 +1,3 @@
-<!-- TODO -->
-
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
@@ -9,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/1b6a588cb6.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
     <link rel="stylesheet" href="{% static 'styles/admin.css' %}">
     <title>Admin</title>
 </head>
@@ -17,9 +17,11 @@
         <section class="administrator">
             <div class="dash_container">
             <div class="dashboard">
+
             <div class="user">
-                <img src="{% static '/images/avatar-ali.png' %}" alt="">
-                <p>User Name</p>
+                <!-- <img src="{% static '/images/avatar-ali.png' %}" alt="">
+                <p>User Name</p> -->
+                <h2>Musicality</h2>
             </div>
             <div class="links">
                 <div class="main">
@@ -30,38 +32,58 @@
                 </div>
                 <div class="add_links">
                     <ul >
-                        <li class="parent">Add Item 
+                        <li class="parent">Tracks 
+                        <ul class="sub_add">
+                            <li><a href="#">Tracks</a></li>
+                            <li><a href="#">Edit Tracks</a></li>
+                            <li><a href="{% url 'upload' %}">Add tacks</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="add_links">
+                    <ul >
+                        <li class="parent">Tour
+                        <ul class="sub_add">
+                            <li><a href="#">Tours</a></li>
+                            <li><a href="#">Edit Tours</a></li>
+                            <li><a href="{% url 'newtour' %}">Add Tour</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="add_links">
+                    <ul >
+                        <li class="parent">Products 
                         <ul class="sub_add">
                             <li><a href="#">Add Outfit</a></li>
-                            <li><a href="{% url 'newtour' %}">Add Tour</a></li>
-                            <li><a href="{% url 'upload' %}">Add Track</a></li>
+                            <li><a href="#">Edit products</a></li>
+                            <li><a href="#">Add Product</a></li>
                         </ul>
                         </li>
                     </ul>
                 </div>
-                <div class="update_links">
-                    <ul >
-                        <li class="parent">Edit Item
-                        <ul class="sub_add">
-                            <li><a href="#">Edit Outfit</a></li>
-                            <li><a href="#">Edit Tour</a></li>
-                            <li><a href="#">Edit Track</a></li>
-                        </ul>
-                        </li>
-                    </ul>
-                </div>
+
                 
             </div>
             <div class="logout">
-                 <a href="{% url 'logout' %}"><button>Log-out</button></a>
+                 <a href="{% url 'logout' %}"><button><i class='bx bx-log-out-circle'></i>Log-out</button></a>
             </div>
             </div>
-            </div>
+            
             <div class="user_operations">
+                <div class="container">
+                    <div class="burger">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
                 <div class="navigation">
+                <div class="cont">
                     <h2>Welcome back {{request.user.username}}!!</h2>
                     <div class="search">
-                    <input type="search"><i class="fa-brands fa-searchengin"></i>
+                    <input type="search" placeholder="search">
+                </div>
                 </div>
                 </div>
             <div class="form_operations">
@@ -71,7 +93,10 @@
                   {% endblock content %}
             </div>
             </div>
+            </div>
+        </div>
         </section>
     </main>
+    <script src="{%static 'js/admin.js'%}"></script>
 </body>
 </html>

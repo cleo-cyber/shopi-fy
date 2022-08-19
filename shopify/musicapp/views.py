@@ -92,7 +92,9 @@ def add_tour(request):
 
     return render(request,'musicapp/add_data/add_tour.html',{'form':form})
 
-    
+  # === EDIT === #  
+def edit_track(request,pk):
+    pass
 
 # ==== User Accounts ==== #
 

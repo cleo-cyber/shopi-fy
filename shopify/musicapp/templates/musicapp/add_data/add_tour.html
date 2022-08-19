@@ -5,5 +5,8 @@
     <form action="{% url 'newtour' %}" method="POST">
     {%csrf_token %}
     {{form.as_p}}
+    <div class="buttons">
     <input type="submit" value="Add tour">
+    <input type="reset" value="Discard">
+</div>
 {% endblock content %}
