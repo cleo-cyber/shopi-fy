@@ -1,0 +1,21 @@
+{% extends 'admin.html' %} {% block content %} 
+<table class="table">
+    <thead class="table-dark">
+    <tr>
+      <th>Banner</th>
+      <th>Title</th>
+    </tr>
+</thead>
+ 
+{% for track in tracks %}
+<tbody>
+  <tr>
+    <td>{{track.track_banner.name}}</td>
+    <td>{{track.title}} </td>
+    <td><a href="{%url 'deletetrack' track.id %}"><button class="btn btn-danger">Delete</button></a></td>
+    <td><a href="{% url 'updatetrack' track.id %}"> <button class="btn btn-secondary"> Update</button></a></td>
+  </tr>
+</tbody>
+{% endfor %} 
+</table>
+{% endblock %}

@@ -1,20 +1,30 @@
+from dataclasses import field, fields
 from xml.dom import ValidationErr
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from musicapp.models import Account
 from django.contrib.auth import authenticate
+from .models import Tour, Tracks
 
 
-class ImageForm(forms.Form):
+class ImageForm(forms.ModelForm):
     track_banner = forms.ImageField()
     title = forms.CharField()
 
+    class Meta:
+        model = Tracks
+        fields = ['track_banner', 'title']
 
-class TourForm(forms.Form):
-    event_description = forms.CharField(max_length=200)
+
+class TourForm(forms.ModelForm):
+    event_description = forms.Textarea()
     venue = forms.CharField()
     price = forms.DecimalField(max_digits=50)
     event_type = forms.CharField(max_length=200)
+
+    class Meta:
+        model = Tour
+        fields = ['event_description', 'venue', 'price', 'event_type']
 
 
 class RegistrationForm(UserCreationForm):
