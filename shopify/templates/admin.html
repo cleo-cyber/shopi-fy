@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 {% load static %}
+
+{% if user.is_authenticated and user.is_admin %}
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -107,3 +110,7 @@
     <script src="{%static 'js/admin.js'%}"></script>
   </body>
 </html>
+{% else%}
+<h2>Not allowed</h2>
+{% endif %}
+

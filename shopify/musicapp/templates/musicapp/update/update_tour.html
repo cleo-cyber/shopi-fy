@@ -1,5 +1,6 @@
 {% extends 'admin.html' %}
 {% block content%}
+{% if user.is_authenticated %}
     <h1>Update tour {{tour.id}}</h1>
     <form action="{% url 'update-tour' tour.id %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
@@ -10,4 +11,5 @@
     </div>
 
     </form>
+    {% endif %}
 {% endblock content %}

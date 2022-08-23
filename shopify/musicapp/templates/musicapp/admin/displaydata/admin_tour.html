@@ -1,4 +1,5 @@
-{% extends 'admin.html' %} {% block content %} 
+{% extends 'admin.html' %} {% block content %}
+{% if user.is_admin %} 
 <table class="table">
     <thead class="table-dark">
     <tr>
@@ -28,4 +29,7 @@
 </tbody>
 {% endfor %} 
 </table>
+{% else %}
+<h2>Nothing to show</h2>
+{% endif %}
 {% endblock %}

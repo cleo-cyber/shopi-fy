@@ -54,6 +54,7 @@ def add_tour(request):
 
 def edit_tour(request, pk):
     try:
+        
         tour = Tour.objects.get(pk=pk)
         form = TourForm(request.POST or None, instance=tour)
         if form.is_valid():
