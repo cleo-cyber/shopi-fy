@@ -1,0 +1,32 @@
+{% extends 'admin.html' %} {% block content %}
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th>Created</th>
+      <th>product_name</th>
+      <th>product_image</th>
+      <th>Price</th>
+      <th>Modify</th>
+    </tr>
+  </thead>
+
+  {% for product in products %}
+  <tbody>
+    <tr>
+      <td>{{product.created}}</td>
+      <td>{{product.product_name}}</td>
+      <td>{{product.product_image.url}}</td>
+      <td>{{product.price}}</td>
+      <td style="display: flex; gap: 1vw">
+        <a href="{% url 'update-product' product.id %}">
+          <button class="btn btn-secondary">Update</button></a
+        >
+        <a href="{%url 'delete-product' product.id %}"
+          ><button class="btn btn-danger">Delete</button></a
+        >
+      </td>
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
+{% endblock %}

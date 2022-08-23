@@ -1,0 +1,13 @@
+{% extends 'admin.html' %}
+{% block content%}
+    <h1>Update tour {{tour.id}}</h1>
+    <form action="{% url 'update-tour' tour.id %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="buttons">
+        <input type="submit" value="Update">  
+        <input type="reset" value="Discard">
+    </div>
+
+    </form>
+{% endblock content %}

@@ -1,9 +1,11 @@
 from dataclasses import field, fields
+from pyexpat import model
 from xml.dom import ValidationErr
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from musicapp.models import Account
 from django.contrib.auth import authenticate
+from shop.models import Product
 from .models import Tour, Tracks
 
 
@@ -25,6 +27,15 @@ class TourForm(forms.ModelForm):
     class Meta:
         model = Tour
         fields = ['event_description', 'venue', 'price', 'event_type']
+
+class ProductForm(forms.ModelForm):
+    product_image=forms.ImageField()
+    product_name=forms.CharField(max_length=200)
+    price=forms.DecimalField(max_digits=50)
+
+    class Meta:
+        model=Product
+        fields=['product_image','product_name','price']
 
 
 class RegistrationForm(UserCreationForm):

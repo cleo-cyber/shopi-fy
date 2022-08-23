@@ -4,6 +4,7 @@
     <tr>
       <th>Banner</th>
       <th>Title</th>
+      <th>Modify</th>
     </tr>
 </thead>
  
@@ -12,8 +13,10 @@
   <tr>
     <td>{{track.track_banner.name}}</td>
     <td>{{track.title}} </td>
-    <td><a href="{%url 'deletetrack' track.id %}"><button class="btn btn-danger">Delete</button></a></td>
-    <td><a href="{% url 'updatetrack' track.id %}"> <button class="btn btn-secondary"> Update</button></a></td>
+    <td style="display:flex;gap:1vw;">
+    <a href="{%url 'deletetrack' track.id %}"><button class="btn btn-danger">Delete</button></a>
+    <a href="{% url 'updatetrack' track.id %}"> <button class="btn btn-secondary"> Update</button></a>
+  </td>
   </tr>
 </tbody>
 {% endfor %} 
