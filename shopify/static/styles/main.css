@@ -27,14 +27,15 @@ width: 90%;
     
     display: flex;
     justify-content: space-between;
-    /* padding: 0 7rem; */
-    /* gap: 15rem; */
     align-items: center;
     min-height: 8vh;
     
 
 }
-
+nav{
+    background: #000000;
+    width: 100%;
+}
 .logo{
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -55,7 +56,7 @@ width: 90%;
 .nav_links a:hover{
     color: teal;
 }
-#hero_section{
+.hero-sect{
     background-color: #000000;
     /* background: linear-gradient(315deg, #000000 0%, #414141 74%); */
     background-image: url('../images/listening.avif');
@@ -65,20 +66,35 @@ width: 90%;
     min-height: 50em;
     border-bottom-left-radius: 50px;
 }
+#hero_section{
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    max-width: 80%;
+    margin: 0 auto;
+    /* text-align: center; */
+}
 .hero_content .text h2{
     text-transform: uppercase;
-    padding-bottom: 1em ;
+    font-size: 5vw;
+    text-shadow: #333;
+    color: transparent;
+    -webkit-text-fill-color: #000;
+    -webkit-text-stroke-color: #fff;
+    -webkit-text-stroke-width: .001px;
+    
 }
 
 .text{
-    padding: 10em 0em;
-    max-width: 750px;
-    font-size: 1rem;
+  padding: 20vh 0;
+  max-width: 650px;
+    
 }
 .hero_content{
-    width: 90%;
-  
-    margin: 0 auto;
+
+
 
 }
 
@@ -90,6 +106,7 @@ width: 90%;
     width: 30%;
     border: 1px solid #72490a;
     cursor: pointer;
+    border-radius: 20px;
 }
 .hero_content button i{
     margin-left: 1em;
@@ -566,8 +583,10 @@ form input[type="submit"]:hover{
         width: 50%;
     }
     .hero_content{
-        margin-left: 3em;
+        /* margin-left: 3em; */
         transition: 0.25s ease-in;
+        text-align: center;
+        padding: 10vh 0;
     }
   
 }
@@ -595,21 +614,26 @@ form input[type="submit"]:hover{
  
     transition: 0.25s ease-in;
 }
+nav{
+    position: fixed;
+    z-index: 50;
+}
 .nav_links{
-    position: absolute;
+    position: fixed;
+    top: 0;
     right: 0;
     display: flex;
     flex-direction: column;
     background-color: #000000;
-    width: 50%;
+    width: 100%;
     background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
    text-align: center;
    justify-content: space-around;
-   top: 8vh;
    height: 100%;
    z-index: 2;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
+    opacity: .97;
     
 
 }
@@ -618,7 +642,11 @@ form input[type="submit"]:hover{
 }
 .burger{
     display: block;
+    z-index: 50;
+    position: fixed;
+    right: 5vw;
 }
+
 .explore_button{
     padding:0.2rem 0;
 }
@@ -632,7 +660,6 @@ form input[type="submit"]:hover{
 }
 .intouch_form{
     font-size: 2.5vw;
-    /* width: 90%; */
     margin: 0 auto;
 }
 .intouch_form h3{
@@ -646,12 +673,48 @@ form input[type="submit"]:hover{
 .form input[type="submit"]{
 padding: 4em;
 }
+.footer_subcontainer{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 0;
+    align-items: center;
+    text-align: center;
+}
+.social_links i{
+    font-size: 5vw;
+}
+.footer_subcontainer .log{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.log .log_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 2.3vw;
+}
+.log_container h2{
+    font-size: 5vw;
+}
 }
 
 .nav-active{
     transform: translateX(0%);
 }
-
+.toggled .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggled .line2{
+    opacity: 0;
+}
+.toggled .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
 @keyframes navLinkAnimation{
     from{
         opacity: 0;

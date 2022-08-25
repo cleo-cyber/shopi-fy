@@ -1,4 +1,3 @@
-// HEADER//
 const slider=()=>{
     const navLink=document.querySelector('.nav_links');
     const burger=document.querySelector('.burger');
@@ -6,6 +5,8 @@ const slider=()=>{
     //toggle navigation bar
     burger.addEventListener('click',()=>{
         navLink.classList.toggle('nav-active');
+        burger.classList.toggle('toggled');
+
     
     });
     
