@@ -81,7 +81,7 @@ nav{
     font-size: 5vw;
     text-shadow: #333;
     color: transparent;
-    -webkit-text-fill-color: #000;
+    -webkit-text-fill-color: transparent;
     -webkit-text-stroke-color: #fff;
     -webkit-text-stroke-width: .001px;
     
@@ -91,11 +91,6 @@ nav{
   padding: 20vh 0;
   max-width: 650px;
     
-}
-.hero_content{
-
-
-
 }
 
 .hero_content button{
