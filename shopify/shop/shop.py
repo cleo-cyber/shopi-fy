@@ -39,6 +39,7 @@ def add_product(request):
         product = Product()
         if form.is_valid():
             product.product_image = request.FILES['product_image']
+            product.product_name=request.POST.get('product_name')
             product.price = request.POST.get('price')
             product.save()
 

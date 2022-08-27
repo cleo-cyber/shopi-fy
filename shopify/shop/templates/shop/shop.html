@@ -5,9 +5,10 @@
 <link rel="stylesheet" href="{% static 'styles/shop.css '%}">
 
 <header>
-    {% include 'nav.html' %}
+    {% include 'shop_nav.html' %}
 </header>
 <section id="products">
+    <a href="{%url 'index'%}" class="back"><i class="fa-solid fa-arrow-left-long"></i>Go back to </a>
     <div class="containerr">
         <div class="product_container">
             {% for item in products %}
@@ -16,11 +17,20 @@
               <a href="">  <img src="{{item.product_image.url}}" alt=""></a>
               </div>
               <div class="desc">
+               
                 <h2>{{item.product_name}}</h2>
-      
-                <a href="#">{{item.price}}</a>
+                <hr>
+                <div class="cart">
+                    <div class="add_cart">
+                    <button type="submit">Add to cart</button>
+                   <a href="#"><button class="view">View</button></a> 
+                </div>
+                    <h1>${{item.price}}</h1>
+    
+                </div>
               </div>  
             </div>
+
             {% endfor %}
           
         </div>
@@ -70,4 +80,5 @@
 {% include 'footer.html' %}
 </footer>
 <script src="{% static 'js/shop.js'%}"></script>
-<script src="{% static 'js/nav.js' %}"></script>
+<script src="{% static 'js/search.js' %}"></script>
+

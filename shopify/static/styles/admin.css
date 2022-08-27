@@ -35,6 +35,7 @@ a{
 margin-left: 24vw;
 width: 100%;
 
+
 }
 .dashboard li{
     color: #ddd;
@@ -73,6 +74,7 @@ button i{
 
 .navigation{
     background-color: #fff;
+    
 
 }
 .cont{
@@ -90,8 +92,10 @@ input[type='search']{
     outline: none;
 }
 .form_operations{
-    margin-top: 5vh;
+
     background: #fff; 
+    margin: 5vh 1vw;
+    box-shadow: 1px 1px 10px #ddd;
 }
 form{
     padding: 5vh 1vw;

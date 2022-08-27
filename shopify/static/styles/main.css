@@ -580,7 +580,7 @@ form input[type="submit"]:hover{
     .hero_content{
         /* margin-left: 3em; */
         transition: 0.25s ease-in;
-        text-align: center;
+        
         padding: 10vh 0;
     }
   
@@ -606,7 +606,7 @@ form input[type="submit"]:hover{
         font-size: 1.5vh;
     }
 .hero_content{
- 
+    text-align: center;
     transition: 0.25s ease-in;
 }
 nav{
