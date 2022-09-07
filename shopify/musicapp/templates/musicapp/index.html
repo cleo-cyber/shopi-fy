@@ -40,6 +40,7 @@
         </div>
         
         <div class="slider">
+            {% if tracks%}
             {% for track in tracks %}
             <div class="products">
                 <picture>
@@ -53,6 +54,9 @@
                 <a href="#">Get it Now</a>
             </div>
             {% endfor %}
+            {%else%}
+            <h2>No music to show currently</h2>
+            {%endif%}
         </div>
     </section>
     <!-- TOURS -->

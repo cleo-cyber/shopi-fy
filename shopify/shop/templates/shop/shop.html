@@ -11,6 +11,7 @@
     <a href="{%url 'index'%}" class="back"><i class="fa-solid fa-arrow-left-long"></i>Go back to </a>
     <div class="containerr">
         <div class="product_container">
+            {% if products%}
             {% for item in products %}
             <div class="items">
             <div class="banner">
@@ -32,6 +33,9 @@
             </div>
 
             {% endfor %}
+            {%else%}
+            <h2>Nothing to show currently</h2>
+            {% endif %}
           
         </div>
     </div>

@@ -43,7 +43,7 @@ def add_product(request):
             product.price = request.POST.get('price')
             product.save()
 
-            return redirect('shop')
+            return redirect('productlist')
     return render(request, 'shop/addproducts/add_product.html', {'form': form})
 
 # ==== EDIT PRODUCTS === #

@@ -39,7 +39,7 @@ def add_track(request):
 
                 track.save()
                 messages.success(request, 'Product added successfully')
-                return redirect('index')
+                return redirect('admintracks')
     except:
         ValidationErr('Inavlid data')
     return render(request, 'musicapp/add_data/add_tracks.html', {'form': form})
