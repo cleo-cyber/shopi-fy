@@ -2,6 +2,7 @@
 <table class="table">
     <thead class="table-dark">
     <tr>
+      <th>#</th>
       <th>Banner</th>
       <th>Title</th>
       <th>Modify</th>
@@ -11,6 +12,7 @@
 {% for track in tracks %}
 <tbody>
   <tr>
+    <th scope="row">{{forloop.counter}}</th>
     <td>{{track.track_banner.name}}</td>
     <td>{{track.title}} </td>
     <td style="display:flex;gap:1vw;">

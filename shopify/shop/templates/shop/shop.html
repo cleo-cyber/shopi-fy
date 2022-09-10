@@ -15,7 +15,7 @@
             {% for item in products %}
             <div class="items">
             <div class="banner">
-              <a href="">  <img src="{{item.product_image.url}}" alt=""></a>
+              <a href="">  <img src="{{item.product_image.url}}" alt="product"></a>
               </div>
               <div class="desc">
                
@@ -23,7 +23,7 @@
                 <hr>
                 <div class="cart">
                     <div class="add_cart">
-                    <button type="submit">Add to cart</button>
+                    <button type="submit" id="add" data-id="{{item.id}}">Add to cart</button>
                    <a href="#"><button class="view">View</button></a> 
                 </div>
                     <h1>${{item.price}}</h1>

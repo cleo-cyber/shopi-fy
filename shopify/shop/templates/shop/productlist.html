@@ -2,6 +2,7 @@
 <table class="table">
   <thead class="table-dark">
     <tr>
+      <th>#</th>
       <th>Created</th>
       <th>product_name</th>
       <th>product_image</th>
@@ -13,6 +14,7 @@
   {% for product in products %}
   <tbody>
     <tr>
+      <th scope="row">{{forloop.counter}}</th>
       <td>{{product.created}}</td>
       <td>{{product.product_name}}</td>
       <td>{{product.product_image.url}}</td>

@@ -3,6 +3,7 @@
 <table class="table">
     <thead class="table-dark">
     <tr>
+      <th>#</th>
         <th>Created</th>
       <th>Description</th>
       <th>Venue</th>
@@ -15,6 +16,7 @@
 {% for tour in tours %}
 <tbody>
   <tr>
+    <th scope="row">{{forloop.counter}}</th>
     <td>{{tour.created}}</td>
     <td>{{tour.event_description}}</td>
     <td>{{tour.venue}} </td>

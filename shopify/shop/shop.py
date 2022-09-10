@@ -1,4 +1,3 @@
-from math import prod
 from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.views import generic
@@ -17,7 +16,6 @@ class ShopView(generic.ListView):
 
     def get_queryset(self):
         context = Product.objects.all()
-        print(context)
         return context
 
 
