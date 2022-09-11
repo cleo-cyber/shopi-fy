@@ -9,3 +9,6 @@ class Product(models.Model):
 
     class Meta:
         ordering=['created']
+
+class Order(models.Model):
+    pass

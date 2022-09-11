@@ -1,88 +1,119 @@
+<!DOCTYPE html>
 {% load static %}
-
-<link rel="stylesheet" href="{%static 'styles/tour.css'%}">
-<link rel="stylesheet" href="{%static 'styles/main.css'%}">
-<link rel="stylesheet" href="{% static 'styles/shop.css '%}">
-
-<header>
-    {% include 'shop_nav.html' %}
-</header>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'styles/tour.css'%}" />
+    <link rel="stylesheet" href="{%static 'styles/main.css'%}" />
+    <link rel="stylesheet" href="{% static 'styles/shop.css '%}" />
+    <script>
+      function getToken(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+          const cookies = document.cookie.split(";");
+          for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+              cookieValue = decodeURIComponent(
+                cookie.substring(name.length + 1)
+              );
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+      const csrftoken = getToken("csrftoken");
+    </script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>{% include 'shop_nav.html' %}</header>
 <section id="products">
-    <a href="{%url 'index'%}" class="back"><i class="fa-solid fa-arrow-left-long"></i>Go back to </a>
-    <div class="containerr">
-        <div class="product_container">
-            {% if products%}
-            {% for item in products %}
-            <div class="items">
-            <div class="banner">
-              <a href="">  <img src="{{item.product_image.url}}" alt="product"></a>
-              </div>
-              <div class="desc">
-               
-                <h2>{{item.product_name}}</h2>
-                <hr>
-                <div class="cart">
-                    <div class="add_cart">
-                    <button type="submit" id="add" data-id="{{item.id}}">Add to cart</button>
-                   <a href="#"><button class="view">View</button></a> 
-                </div>
-                    <h1>${{item.price}}</h1>
-    
-                </div>
-              </div>  
-            </div>
-
-            {% endfor %}
-            {%else%}
-            <h2>Nothing to show currently</h2>
-            {% endif %}
-          
+  <a href="{%url 'index'%}" class="back"
+    ><i class="fa-solid fa-arrow-left-long"></i>Go back to
+  </a>
+  <div class="containerr">
+    <div class="product_container">
+      {% if products%} {% for item in products %}
+      <div class="items">
+        <div class="banner">
+          <a href=""> <img src="{{item.product_image.url}}" alt="product" /></a>
         </div>
+        <div class="desc">
+          <h2>{{item.product_name}}</h2>
+          <hr />
+          <div class="cart">
+            <div class="add_cart">
+              <button
+                type="submit"
+                id="add"
+                data-id="{{item.id}}"
+                data-action="addItem"
+              >
+                Add to cart
+              </button>
+              <a href="#"><button class="view">View</button></a>
+            </div>
+            <h1>${{item.price}}</h1>
+          </div>
+        </div>
+      </div>
+
+      {% endfor %} {%else%}
+      <h2>Nothing to show currently</h2>
+      {% endif %}
     </div>
-  
+  </div>
 </section>
 <section id="quote">
-    <div class="containerr">
-        <div class="quot_container">
-            <div class="quotes">
-                <div class="quote_slide">
-                    <span><i class="fa-solid fa-quote-right"></i></span>
-                    <h2>Art Perfection</h2>
-                    <p>A designer knows he has achieved perfection not when there's nothing left but when nothing is lef to take away</p>
-                    <p><strong>George Hill</strong></p>
-                    <small>Artist</small>
-            </div>
+  <div class="containerr">
+    <div class="quot_container">
+      <div class="quotes">
+        <div class="quote_slide">
+          <span><i class="fa-solid fa-quote-right"></i></span>
+          <h2>Art Perfection</h2>
+          <p>
+            A designer knows he has achieved perfection not when there's nothing
+            left but when nothing is lef to take away
+          </p>
+          <p><strong>George Hill</strong></p>
+          <small>Artist</small>
         </div>
-            <div class="quotes">
-                <div class="quote_slide">
-
-                <span><i class="fa-solid fa-quote-right"></i></span>
-                <h2>Wonderful Designs</h2>
-                <p>You can design create and build most Wonderful place in the world. But it takes people to make the dream a reality</p>
-                <p><strong>Walt Disney</strong></p>
-                <small>Animator</small>
+      </div>
+      <div class="quotes">
+        <div class="quote_slide">
+          <span><i class="fa-solid fa-quote-right"></i></span>
+          <h2>Wonderful Designs</h2>
+          <p>
+            You can design create and build most Wonderful place in the world.
+            But it takes people to make the dream a reality
+          </p>
+          <p><strong>Walt Disney</strong></p>
+          <small>Animator</small>
         </div>
+      </div>
+      <div class="quotes">
+        <div class="quote_slide">
+          <span><i class="fa-solid fa-quote-right"></i></span>
+          <h2>Dressing</h2>
+          <p>You can have anything you want in life if you dress for it</p>
+          <p><strong>Edith Head</strong></p>
+          <small>Designer</small>
         </div>
-        <div class="quotes">
-            <div class="quote_slide">
-
-            <span><i class="fa-solid fa-quote-right"></i></span>
-            <h2>Dressing</h2>
-            <p>You can have anything you want in life if you dress for it</p>
-            <p><strong>Edith Head</strong></p>
-            <small>Designer</small>
+      </div>
     </div>
-    </div>
-
-        </div>
-
-
-    </div>
+  </div>
 </section>
 
-<footer>
-{% include 'footer.html' %}
-</footer>
+<footer>{% include 'footer.html' %}</footer>
 <script src="{% static 'js/shop.js'%}"></script>
 <script src="{% static 'js/search.js' %}"></script>
+  </body>
+</html>
+
+
 

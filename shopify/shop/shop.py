@@ -3,7 +3,8 @@ from django.shortcuts import render, redirect
 from django.views import generic
 from .models import Product
 from musicapp.forms import ProductForm
-
+from django.http import JsonResponse
+import json
 # Create your views here.
 
 
@@ -67,3 +68,13 @@ def delete_product(request, pk):
         return redirect('productlist')
     except:
         ValueError('Invalid Operation')
+
+# === CART === #
+
+def updateItem(request):
+    data=json.loads(request.body)
+    productId=data['productId']
+    productAction=data['productAction']
+    print(productId)
+    print(productAction)
+    return JsonResponse('item was added',safe=False)

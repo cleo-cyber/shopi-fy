@@ -31,5 +31,6 @@ urlpatterns = [
     path('addproduct/', shop.add_product, name='add-product'),
     path('productlist/', shop.AdminProductList.as_view(), name='productlist'),
     path('updateproduct/<int:pk>/', shop.edit_product, name='update-product'),
-    path('deleteproduct/<int:pk>/', shop.delete_product, name='delete-product')
+    path('deleteproduct/<int:pk>/', shop.delete_product, name='delete-product'),
+    path('updateCart/',shop.updateItem,name='updateCart'),
 ]

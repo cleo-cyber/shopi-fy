@@ -83,6 +83,28 @@ i.addEventListener('click',addToCart)
 });
 
 function addToCart(e){
-   var dataId=e.target.dataset.id;
-   alert(dataId)
+    var productId=this.dataset.id;
+    var productAction=this.dataset.action;
+
+    updateUserOrder(productId,productAction);
+
+}
+
+
+function updateUserOrder(productId,productAction){
+    url='/updateCart/';
+    fetch(url,{
+        method:'POST',
+        headers:{
+            'Content-Type': 'application/json',
+            'X-CSRFToken':csrftoken,
+        },
+        body:JSON.stringify({'productId':productId, 'productAction':productAction})
+    })
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+        console.log('data:',data)
+    })
 }
