@@ -77,4 +77,6 @@ def updateItem(request):
     productAction=data['productAction']
     print(productId)
     print(productAction)
+
+    product = Product.objects.get(id=productId)
     return JsonResponse('item was added',safe=False)

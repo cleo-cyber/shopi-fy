@@ -11,6 +11,7 @@ from django.contrib.auth import authenticate, login, logout
 class IndexView(generic.ListView):
     template_name = 'musicapp/index.html'
     context_object_name = 'tracks'
+    
 
     def get_queryset(self):
         context = Tracks.objects.all()
