@@ -30,3 +30,4 @@ class Order(models.Model):
         return str(self.id)
 
 
+# Pending migrations on added models
