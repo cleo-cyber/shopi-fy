@@ -1,7 +1,7 @@
 from django.contrib import admin
 from musicapp.models import Tracks, Tour, Account
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-
+from shop.models import Product,ShippingAddress,Order,OrderItem,Customer
 # Customize django admin
 
 
@@ -34,3 +34,4 @@ class MyUserAdmin(BaseUserAdmin):
 admin.site.register(Tracks)
 admin.site.register(Tour)
 admin.site.register(Account, MyUserAdmin)
+

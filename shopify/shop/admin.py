@@ -1,5 +1,5 @@
 from django.contrib import admin
-from shop.models import Product
+from shop.models import Product,ShippingAddress,Order,OrderItem,Customer
 
 # Register your models here.
 class ShopAdmin(admin.AdminSite):
@@ -8,3 +8,7 @@ class ShopAdmin(admin.AdminSite):
 shop_site=ShopAdmin(name='ShopAdmin')
 
 shop_site.register(Product)
+shop_site.register(ShippingAddress)
+shop_site.register(Order)
+shop_site.register(OrderItem)
+shop_site.register(Customer)
