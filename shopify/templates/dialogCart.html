@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/shop_nav.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="dialog">
+  
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Items</th>
+                    <th>Total</th>
+                    <th>Confirm</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>3</td>
+                    <td>430</td>
+                    <td> <button class="Checkout">Checkout</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th></th>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    {% for item in items %}
+                    <td><img src="{{item.product.imageURL" alt=""></td>
+                    <td>{{item.product.name}}</td>
+                    <td>${item.product.price|floatformat:2}</td>
+                    <td><input type="number" class="qtyNumber">{{item.quantity}}</td>
+                    {% endfor %}
+                </tr>
+                </tbody>
+            </table>
+           </div>
+        </div>
+    <!-- </div> -->
+    <!-- </div> -->
+</body>
+</html>
+
+
+
+
+
+

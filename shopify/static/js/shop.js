@@ -92,7 +92,7 @@ function addToCart(e){
 
 
 function updateUserOrder(productId,productAction){
-    url='/updateCart/';
+    let url='/updateCart/';
     fetch(url,{
         method:'POST',
         headers:{
@@ -108,3 +108,6 @@ function updateUserOrder(productId,productAction){
         console.log('data:',data)
     })
 }
+
+// CART BTN
+

@@ -1,7 +1,7 @@
 from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.views import generic
-from .models import Product
+from .models import Product,Order
 from musicapp.forms import ProductForm
 from django.http import JsonResponse
 import json
@@ -80,3 +80,12 @@ def updateItem(request):
 
     product = Product.objects.get(id=productId)
     return JsonResponse('item was added',safe=False)
+
+
+def cart(request):
+    order,created=Order.objects.get_or_create(complete=False)
+    items=order.orderitem_set.all();
+
+
+    context={'items':items}
+    return render(request,'dialogCart.html',context)

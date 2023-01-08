@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{%static 'styles/tour.css'%}" />
     <link rel="stylesheet" href="{%static 'styles/main.css'%}" />
     <link rel="stylesheet" href="{% static 'styles/shop.css '%}" />
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
     <script>
       function getToken(name) {
         let cookieValue = null;
@@ -108,10 +110,14 @@
     </div>
   </div>
 </section>
+<section id="orderContainer">
+  {% include 'dialogCart.html' %}
+</section>
 
 <footer>{% include 'footer.html' %}</footer>
 <script src="{% static 'js/shop.js'%}"></script>
 <script src="{% static 'js/search.js' %}"></script>
+<script src="{% static 'js/carte.js'%}"></script>
   </body>
 </html>
 

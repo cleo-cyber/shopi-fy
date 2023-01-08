@@ -68,3 +68,84 @@ input[type="search"]{
     
 }
 
+
+
+.dialog{
+
+    z-index: 100;
+    position: absolute;
+    top: 8vh;
+    width: 100%;
+    min-height: 50vh;
+    margin: 0 auto;
+    color: #000;
+    background-color: rgb(236, 235, 235);
+    display: none;
+}
+.item, .orderitem{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+margin: 5vh 2vw;
+background-color: #fff;
+border-radius: 1rem;
+
+}
+.Cartcont{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    
+}
+.item{
+    margin-bottom: 2vh;
+    min-height: 10vh;
+    align-items: center;
+    padding: 3vw;
+}
+
+.qtyNumber{
+    width: 3vw;
+    height: 2.5vh;
+    align-items: center;
+    border:1px solid rgb(131, 131, 131) ;
+
+}
+.Checkout{
+    background-color: rgba(3, 129, 3, 0.856);
+    border-radius: 1rem;
+}
+.Checkout:hover{
+    background-color: rgb(3, 145, 3);
+    color: #fff;
+    cursor: pointer;
+}
+table{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-collapse: collapse;
+    height: auto;
+    margin: 5vh 2vw;
+    border-radius: 1rem;
+}
+tr{
+    display: flex;
+    justify-content: space-around;
+    
+}
+th{
+
+font-weight: bold;
+text-align: center;
+}
+td{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.dialog.visible{
+display: block;
+}
